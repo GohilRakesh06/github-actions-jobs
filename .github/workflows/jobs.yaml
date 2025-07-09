@@ -1,0 +1,19 @@
+name: jobs example
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  job_id_1:
+    name: myjob1
+    runs-on: ubuntu-latest
+    stpes:
+      - name: job 1 step 1 runs
+        run: echo "job 1 runs now"
+  job_id_2:
+    name: myjob2
+    runs-on: ubuntu-latest
+    steps:
+      - name: job 2 step 2 runs
+        run: echo "job 2 is running now"
