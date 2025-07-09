@@ -12,7 +12,7 @@ jobs:
       - name: file created 
         run: sudo touch mysum.txt
       - name: number added to file
-        run: echo 5 > mysum.txt 
+        run: sudo sh -c "echo 5 > mysum.txt" 
 
       - name: upload file as artifact
         uses: actions/upload-artifact@v4
