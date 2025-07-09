@@ -105,6 +105,11 @@ jobs:
       - name: check out repo for fetching script to runner
         uses: actions/checkout@v4
 
+      - name: print current directory
+        run: pwd
+      - name: print dir structure
+        run: ls -la
+
       - name: run the script
         run: ./myscript.sh
 
