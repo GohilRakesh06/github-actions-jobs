@@ -107,8 +107,6 @@ jobs:
     steps:
       - name: check out repo for fetching script to runner
         uses: actions/checkout@v4
-        env:
-          city: limbdi
 
       - name: print current directory
         run: pwd
@@ -117,4 +115,6 @@ jobs:
 
       - name: run the script
         run: chmod +x ./myscript.sh
+        env:
+          city: limbdi #only applies to this step
 
