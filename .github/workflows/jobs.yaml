@@ -59,6 +59,9 @@ jobs:
           name: myfile2
           path: mysum2.txt
 
+      - name: display structure
+        run: sudo ls -R
+
       - name: add both files number
         run: |
            sum=$(( $(cat mysum1.txt) + $(cat mysum2.txt) ))
