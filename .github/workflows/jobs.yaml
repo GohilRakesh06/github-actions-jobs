@@ -18,7 +18,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: myfile1
-          path: mysum1.txt
+          path: /tmp/mysum1.txt
 
   job_id_2:
     #needs: job_id_1
@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: myfile2
-          path: mysum2.txt
+          path: /tmp/mysum2.txt
 
         
 
@@ -51,13 +51,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: myfile1
-          path: mysum1.txt
+          path: /tmp/mysum1.txt
 
       - name: download  file2
         uses: actions/download-artifact@v4
         with:
           name: myfile2
-          path: mysum2.txt
+          path: /tmp/mysum2.txt
 
       - name: display structure
         run: sudo ls -R
@@ -65,13 +65,13 @@ jobs:
       - name: add both files number
         run: |
            sum=$(( $(cat mysum1.txt) + $(cat mysum2.txt) ))
-           echo "$sum" > mysum3.txt
+           echo "$sum" > /tmp/mysum3.txt
 
       - name: upload sum as artifact
         uses: actions/upload-artifact@v4
         with:
           name: mysum
-          path: mysum3.txt
+          path: /tmp/mysum3.txt
 
 
           
