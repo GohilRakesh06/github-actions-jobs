@@ -102,8 +102,7 @@ jobs:
       run:
         working-directory: ./scripts
     steps:
-      - name: create working directory
-        run: mkdir -p ./scripts
+     
       - name: check out repo for fetching script to runner
         uses: actions/checkout@v4
 
