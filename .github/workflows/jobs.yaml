@@ -6,13 +6,13 @@ on:
 
 jobs:
   job_id_1:
-    needs: job_id_4
     name: myjob1
     runs-on: ubuntu-latest
     steps:
       - name: job 1 step 1 runs
         run: sleep 5 | echo "job 1 runs now" 
   job_id_2:
+    needs: job_id_1
     name: myjob2
     runs-on: ubuntu-latest
     steps:
@@ -20,6 +20,7 @@ jobs:
         run: sleep 5 | echo "job 2 is running now"
 
   job_id_3:
+    needs: job_id_2
     name: myjob3
     runs-on: ubuntu-latest
     steps:
@@ -27,6 +28,7 @@ jobs:
         run: sleep 3 | echo "job 3 running now"
 
   job_id_4:
+    needs: job_id_3
     name: myjob4
     runs-on: ubuntu-latest
     steps: 
