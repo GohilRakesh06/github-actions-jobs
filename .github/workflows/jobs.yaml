@@ -94,3 +94,17 @@ jobs:
 
       - name: display sum
         run: cat ./mysum3.txt
+
+  job_id_5:
+    name: run script from workflow
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
+    steps:
+      - name: check out repo for fetching script to runner
+        uses: aactions/checkout@v4
+
+      - name: run the script
+        run: ./myscript.sh
+
