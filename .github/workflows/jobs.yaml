@@ -60,7 +60,7 @@ jobs:
           path: /tmp/mysum2.txt
 
       - name: display structure
-        run: sudo ls -r
+        run: sudo ls -r /tmp
 
       - name: add both files number
         run: |
