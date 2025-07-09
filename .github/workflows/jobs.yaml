@@ -10,20 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: job 1 step 1 runs
-        run: echo "job 1 runs now"
+        run: sleep 5 | echo "job 1 runs now" 
   job_id_2:
     name: myjob2
     runs-on: ubuntu-latest
     steps:
       - name: job 2 step 1 runs
-        run: echo "job 2 is running now"
+        run: sleep 5 | echo "job 2 is running now"
 
   job_id_3:
     name: myjob3
     runs-on: ubuntu-latest
     steps:
       - name: job 3 step 1 runs
-        run: echo "job 3 running now"
+        run: sleep 3 | echo "job 3 running now"
 
   job_id_4:
     name: myjob4
