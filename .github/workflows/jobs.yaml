@@ -60,11 +60,12 @@ jobs:
           path: /tmp/mysum2.txt
 
       - name: display structure
-        run: sudo ls -R
+        run: sudo ls -r
 
       - name: add both files number
         run: |
            sum=$(( $(cat /tmp/mysum1.txt) + $(cat /tmp/mysum2.txt) ))
+           echo $sum
            echo "$sum" > /tmp/mysum3.txt
 
       - name: upload sum as artifact
