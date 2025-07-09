@@ -113,8 +113,11 @@ jobs:
       - name: print dir structure
         run: ls -la
 
-      - name: run the script
+      - name: change permission of the script
         run: chmod +x ./myscript.sh
+
+      - name: run the script
+        run: ./myscript.sh
         env:
           city: limbdi #only applies to this step
 
