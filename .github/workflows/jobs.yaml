@@ -103,7 +103,7 @@ jobs:
         working-directory: ./scripts
     steps:
       - name: check out repo for fetching script to runner
-        uses: aactions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: run the script
         run: ./myscript.sh
