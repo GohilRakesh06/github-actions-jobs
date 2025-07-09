@@ -15,5 +15,19 @@ jobs:
     name: myjob2
     runs-on: ubuntu-latest
     steps:
-      - name: job 2 step 2 runs
+      - name: job 2 step 1 runs
         run: echo "job 2 is running now"
+
+  job_id_3:
+    name: myjob3
+    runs-on: ubuntu-latest
+    steps:
+      - name: job 3 step 1 runs
+        run: echo "job 3 running now"
+
+  job_id_4:
+    name: myjob4
+    runs-on: ubuntu-latest
+    steps: 
+      - name: job 4 step 1 runs
+        run: echo "job 4 is running now"
