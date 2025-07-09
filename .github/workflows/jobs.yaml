@@ -43,7 +43,7 @@ jobs:
         
 
   job_id_3:
-    needs: job_id_2
+    needs: [job_id_1,job_id_2]
     name: download and add both file
     runs-on: ubuntu-latest
     steps:
