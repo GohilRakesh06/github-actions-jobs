@@ -18,7 +18,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: myfile1
-          path: /tmp/mysum1.txt
+          path: /tmp
 
   job_id_2:
     needs: job_id_1
@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: myfile2
-          path: /tmp/mysum2.txt
+          path: /tmp
 
         
 
@@ -51,13 +51,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: myfile1
-          path: /tmp/mysum1.txt
+          path: /tmp
 
       - name: download  file2
         uses: actions/download-artifact@v4
         with:
           name: myfile2
-          path: /tmp/mysum2.txt
+          path: /tmp
 
       - name: display structure
         run: sudo ls -la /tmp
@@ -72,7 +72,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mysum
-          path: /tmp/mysum3.txt
+          path: /tmp
 
 
           
