@@ -29,7 +29,7 @@ jobs:
         run: sudo touch mysum2.txt
 
       - name: dispaly structure
-        run: sudo ls -r
+        run: sudo ls -la /tmp
       
       - name: add file 2
         run: sudo sh -c "echo 7 > /tmp/mysum2.txt"
@@ -60,7 +60,7 @@ jobs:
           path: /tmp/mysum2.txt
 
       - name: display structure
-        run: sudo ls -r /tmp
+        run: sudo ls -la /tmp
 
       - name: add both files number
         run: |
