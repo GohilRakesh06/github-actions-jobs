@@ -32,16 +32,16 @@ jobs:
         run: sudo touch mysum2.txt
 
       - name: dispaly structure
-        run: sudo ls -la /tmp
+        run: sudo ls -la 
       
       - name: add file 2
-        run: sudo sh -c "echo 7 > /tmp/mysum2.txt"
+        run: sudo sh -c "echo 7 > ./mysum2.txt"
       
       - name: upload file 2 as artifact
         uses: actions/upload-artifact@v4
         with:
           name: myfile2
-          path: /tmp
+          path: .
 
         
 
@@ -54,28 +54,28 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: myfile1
-          path: /tmp
+          path: .
 
       - name: download  file2
         uses: actions/download-artifact@v4
         with:
           name: myfile2
-          path: /tmp
+          path: .
 
       - name: display structure
-        run: sudo ls -la /tmp
+        run: sudo ls -la 
 
       - name: add both files number
         run: |
-           sum=$(( $(cat /tmp/mysum1.txt) + $(cat /tmp/mysum2.txt) ))
+           sum=$(( $(cat ./mysum1.txt) + $(cat ./mysum2.txt) ))
            echo $sum
-           echo "$sum" > /tmp/mysum3.txt
+           echo "$sum" > ./mysum3.txt
 
       - name: upload sum as artifact
         uses: actions/upload-artifact@v4
         with:
           name: mysum
-          path: /tmp
+          path: .
 
 
           
@@ -90,7 +90,7 @@ jobs:
         uses: actions/download-artifact@v4
         with: 
           name: mysum
-          path: /tmp
+          path: .
 
       - name: display sum
-        run: cat /tmp/mysum3.txt
+        run: cat ./mysum3.txt
