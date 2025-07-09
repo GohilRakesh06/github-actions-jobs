@@ -82,7 +82,7 @@ jobs:
         uses: actions/download-artifact@v4
         with: 
           name: mysum
-          path: mysum3.txt
+          path: .
 
       - name: display sum
         run: cat mysum3.txt
