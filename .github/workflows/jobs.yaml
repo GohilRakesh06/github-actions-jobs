@@ -12,7 +12,7 @@ jobs:
       - name: file created 
         run: sudo touch mysum1.txt
       - name: number added to file
-        run: sudo sh -c "echo 5 > mysum1.txt" 
+        run: sudo sh -c "echo 5 > /tmp/mysum1.txt" 
 
       - name: upload file as artifact
         uses: actions/upload-artifact@v4
@@ -32,7 +32,7 @@ jobs:
         run: sudo ls -r
       
       - name: add file 2
-        run: sudo sh -c "echo 7 > mysum2.txt"
+        run: sudo sh -c "echo 7 > /tmp/mysum2.txt"
       
       - name: upload file 2 as artifact
         uses: actions/upload-artifact@v4
@@ -64,7 +64,7 @@ jobs:
 
       - name: add both files number
         run: |
-           sum=$(( $(cat mysum1.txt) + $(cat mysum2.txt) ))
+           sum=$(( $(cat /tmp/mysum1.txt) + $(cat /tmp/mysum2.txt) ))
            echo "$sum" > /tmp/mysum3.txt
 
       - name: upload sum as artifact
