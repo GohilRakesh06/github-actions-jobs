@@ -59,7 +59,7 @@ jobs:
           name: myfile2
           path: mysum2.txt
 
-      - name: add both files number:
+      - name: add both files number
         run: |
            sum=$(( $(cat mysum1.txt) + $(cat mysum2.txt) ))
            echo "$sum" > mysum3.txt
