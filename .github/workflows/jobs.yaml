@@ -67,7 +67,7 @@ jobs:
       - name: upload sum as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: mysum1
+          name: mysum
           path: mysum3.txt
 
 
