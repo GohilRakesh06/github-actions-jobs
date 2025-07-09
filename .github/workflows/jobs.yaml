@@ -6,18 +6,33 @@ on:
 
 jobs:
   job_id_1:
-    name: myjob1
+    name: number 1 added to file
     runs-on: ubuntu-latest
     steps:
-      - name: job 1 step 1 runs
-        run: sleep 5 | echo "job 1 runs now" 
+      - name: file created 
+        run: sudo touch mysum.txt
+      - name: number added to file
+        run: echo 5 > mysum.txt 
+
+      - name: upload file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: myfile
+          path: mysum.txt
+
   job_id_2:
     needs: job_id_1
-    name: myjob2
+    name: number 2 added to file
     runs-on: ubuntu-latest
     steps:
-      - name: job 2 step 1 runs
-        run: sleep 5 | echo "job 2 is running now"
+      - name: download file from job 1
+        uses: actions/download-artifact@v4
+        with:
+          name: myfile
+          path: .
+      - name: dispaly structure
+        run: sudo ls -r
+        
 
   job_id_3:
     needs: job_id_2
