@@ -101,6 +101,8 @@ jobs:
   job_id_5:
     name: run script from workflow
     runs-on: ubuntu-latest
+    env:
+      data1: injob5only
     defaults:
       run:
         working-directory: ./scripts
@@ -115,6 +117,9 @@ jobs:
 
       - name: change permission of the script
         run: chmod +x ./myscript.sh
+
+      - name: print var define for this job only
+        run: echo $data1
 
       - name: run the script
         run: ./myscript.sh
