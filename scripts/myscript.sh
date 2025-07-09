@@ -1,1 +1,1 @@
-echo "script is running"
+echo "welcome $MYNAME  and i am from $city"
