@@ -12,13 +12,16 @@ jobs:
       - name: file created 
         run: sudo touch mysum1.txt
       - name: number added to file
-        run: sudo sh -c "echo 5 > /tmp/mysum1.txt" 
+        run: sudo sh -c "echo 5 > ./mysum1.txt" 
+
+      - name: current file ls
+        run: ls -la
 
       - name: upload file as artifact
         uses: actions/upload-artifact@v4
         with:
           name: myfile1
-          path: /tmp
+          path: .
 
   job_id_2:
     needs: job_id_1
