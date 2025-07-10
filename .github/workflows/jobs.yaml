@@ -163,3 +163,12 @@ jobs:
     steps:
       - name: 
         
+
+  job_9:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        version: [10,12,14]
+    steps:
+      - name: print jobs versions
+        run: echo "${{matrix.version}}"
