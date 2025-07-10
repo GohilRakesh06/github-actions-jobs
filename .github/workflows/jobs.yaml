@@ -161,7 +161,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: 
+        os: [windows, linux]
         version: [10,12,14]
     steps:
       - name: print jobs versions
-        run: echo "${{matrix.version}}"
+        run: echo "${{matrix.os}} ${{matrix.version}} "
