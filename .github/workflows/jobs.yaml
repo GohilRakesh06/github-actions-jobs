@@ -133,13 +133,13 @@ jobs:
       output2:  ${{ steps.step2.outputs.test }} 
     steps:
       - id: step1
-        run: echo "test=hello" >> "GITHUB_OUTPUT"
+        run: echo "test=hello" >> "$GITHUB_OUTPUT"
 
       - id: step3
         run: echo "$output1 $output2"
 
       - id: step2
-        run: echo "test=world" >> "GITHUB_OUTPUT"
+        run: echo "test=world" >> "$THUB_OUTPUT"
 
 
 
